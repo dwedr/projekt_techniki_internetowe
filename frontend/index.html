@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruch Harmoniczny</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Ruch Harmoniczny</h1>
+        <p>Podstawy drgań i energii w ruchu harmonicznym</p>
+    </header>
+
+    <nav>
+        <button id="stronaGlownaButton">Strona Główna</button>
+        <button id="animacjaBtn">Animacja</button>
+        <button id="loginBtn">Zaloguj</button>
+        <button id="registerBtn">Rejestracja</button>
+    </nav>
+
+    <main>
+
+        <article id="stronaGlowna">
+            <h2>Ruch Harmoniczny</h2>
+            <p>
+                Ruch harmoniczny to szczególny przypadek ruchu drgającego, który można opisać jako powtarzalny i
+                okresowy ruch wokół położenia równowagi. Występuje on wtedy, gdy siła przywracająca działająca na ciało
+                jest proporcjonalna do wychylenia tego ciała z położenia równowagi i skierowana w stronę tego
+                położenia. Takie zjawiska są powszechne zarówno w przyrodzie, jak i w systemach technicznych, np.
+                w oscylacjach mas na sprężynach, ruchu wahadła czy drganiach cząsteczek w chemii kwantowej.
+            </p>
+
+            <img src="../bin/harmonic_motion.png" alt="Ruch harmoniczny w życiu codziennym"
+                style="display: block; margin: 0 auto; width: 100%;">
+
+            <h3>Okres i częstotliwość drgań</h3>
+            <p>Okresem (<em>T</em>) w ruchu periodycznym nazywamy czas wykonania jednego pełnego drgania. Zwykle
+                wyrażany jest w sekundach, ale może być podawany w innych jednostkach czasu (np. minutach, godzinach).
+            </p>
+            <p>Częstotliwość (<em>f</em>) to liczba drgań na jednostkę czasu. Zależność między okresem a częstotliwością
+                wyraża wzór:</p>
+            <p><strong>f = 1 / T</strong></p>
+            <p>Jednostką częstotliwości w układzie SI jest herc (Hz), który oznacza jeden cykl na sekundę:</p>
+            <p><strong>1 Hz = 1 cykl / sekunda = 1 s<sup>-1</sup></strong></p>
+            <p>Cykl oznacza jedno pełne drgnienie.</p>
+
+            <h3>Opis Matematyczny Ruchu Harmonicznego</h3>
+            <p>
+                Ruch harmoniczny opisuje drgania wokół położenia równowagi, w których ciało powraca do punktu równowagi
+                pod wpływem siły
+                proporcjonalnej do wychylenia, działającej w przeciwnym kierunku. W takim ruchu położenie ciała w
+                dowolnym momencie
+                czasu można opisać za pomocą funkcji harmonicznej, takiej jak cosinus lub sinus. Dla sytuacji, w której
+                ciało startuje
+                z maksymalnego wychylenia, równanie przyjmuje postać:
+                <strong>x(t) = A cos(ωt + φ)</strong>.
+            </p>
+            <p>
+                To równanie wyjaśnia zależność położenia ciała x(t) od czasu t, amplitudy A, częstości kątowej ω,
+                oraz fazy początkowej φ. Kluczowe elementy równania są następujące:
+            </p>
+            <ul>
+                <li><strong>A:</strong> Amplituda, określa maksymalne wychylenie od położenia równowagi, czyli najdalszy
+                    punkt, jaki osiąga ciało.</li>
+                <li><strong>ω:</strong> Częstość kołowa, wyrażona wzorem <strong>ω = 2π / T</strong>, gdzie T to okres
+                    drgań.
+                    Oznacza szybkość zmian fazy drgań w jednostkach radianów na sekundę.</li>
+                <li><strong>φ:</strong> Faza początkowa, uwzględnia stan początkowy układu w chwili t = 0. Określa, w
+                    której części cyklu ruchu
+                    ciało zaczyna się poruszać.</li>
+            </ul>
+            <img src="../bin/oscilation2.png" alt="x(t)" style="display: block; margin: 0 auto; width: 30%;">
+
+            <p>
+                Funkcja cosinus w równaniu x(t) opisuje periodyczne zmiany położenia ciała. Dzięki temu możemy dokładnie
+                przewidzieć,
+                gdzie znajdzie się ciało w każdej chwili czasu. Kiedy t = 0, funkcja x(0) = A cos(φ), co oznacza, że
+                położenie początkowe
+                zależy od amplitudy i fazy początkowej. Ruch ciała jest cykliczny, a wartości położenia powtarzają się
+                co okres T, czyli co pełen cykl drgań.
+            </p>
+            <p>
+                Równanie to uwzględnia także zależność między ruchem harmonicznym a funkcją cosinus, której wartości
+                wahają się od -1 do +1.
+                Mnożenie przez amplitudę A pozwala przeskalować te wartości, dzięki czemu opisują rzeczywiste wychylenia
+                w jednostkach długości
+                (np. w metrach lub centymetrach). Na przykład, kiedy funkcja cos osiąga maksimum (1), położenie ciała
+                wynosi x = +A,
+                czyli jest ono maksymalnie wychylone w dodatnią stronę. Kiedy cos osiąga minimum (-1), ciało znajduje
+                się w położeniu x = -A,
+                czyli maksymalnie wychylone w stronę przeciwną.
+            </p>
+            <img src="../bin/oscilation.png" alt="Maksymalne wychylenia"
+                style="display: block; margin: 0 auto; width: 50%;">
+            <p>
+                Formuły na prędkość v(t) i przyspieszenie a(t) wynikają z pochodnych funkcji położenia x(t) względem
+                czasu. Prędkość jest pierwszą pochodną x(t):
+                <strong>v(t) = dx/dt = -Aω sin(ωt + φ)</strong>. Wynika to z faktu, że pochodna cosinusa to minus sinus.
+                Przyspieszenie, z kolei,
+                jest pochodną prędkości względem czasu, czyli drugą pochodną x(t):
+                <strong>a(t) = dv/dt = -Aω² cos(ωt + φ)</strong>. To oznacza, że przyspieszenie w ruchu harmonicznym
+                również zmienia się sinusoidalnie
+                i jest proporcjonalne do położenia, ale ma przeciwny znak.
+            </p>
+            <h4>Podsumowanie Wzorów:</h4>
+            <ul>
+                <li><strong>Położenie:</strong> <em>x(t) = A cos(ωt + φ)</em></li>
+                <li><strong>Prędkość:</strong> <em>v(t) = -Aω sin(ωt + φ)</em>, gdzie <em>v<sub>max</sub> = Aω</em></li>
+                <li><strong>Przyspieszenie:</strong> <em>a(t) = -Aω² cos(ωt + φ)</em>, gdzie <em>a<sub>max</sub> =
+                        Aω²</em></li>
+            </ul>
+            <p>
+                Te wzory ukazują, że ruch harmoniczny jest definiowany przez ściśle określone zależności czasowe, które
+                umożliwiają
+                precyzyjne opisanie zmian położenia, prędkości i przyspieszenia w czasie. Wynikają one bezpośrednio z
+                matematycznych właściwości
+                funkcji trygonometrycznych i ich pochodnych.
+            </p>
+            <h3>Drgania masy na sprężynie</h3>
+            <p>
+                W przypadku ruchu harmonicznego masy na sprężynie, drgania opisuje równanie harmoniczne, które wynika z
+                prawa Hooke’a. Siła sprężystości
+                działająca na masę jest proporcjonalna do wychylenia i można ją zapisać jako <strong>F = -kx</strong>,
+                gdzie:
+            </p>
+            <ul>
+                <li><strong>k:</strong> Stała sprężystości, która określa, jak „sztywna” jest sprężyna.</li>
+                <li><strong>x:</strong> Wychylenie od położenia równowagi.</li>
+            </ul>
+            <p>
+                Siła ta odpowiada za ruch harmoniczny masy i powoduje, że ciało oscyluje wokół punktu równowagi. Przy
+                założeniu, że w układzie nie
+                występuje tarcie ani inne siły zewnętrzne, równania ruchu harmonicznego można opisać w formie:
+                <strong>x(t) = A cos(ωt + φ)</strong>, gdzie <strong>ω = √(k/m)</strong>. Częstość kołowa ω zależy od
+                stosunku
+                stałej sprężystości do masy, co oznacza, że im większa jest sztywność sprężyny (k), tym szybsze są
+                drgania.
+            </p>
+            <p>
+                Przy wspomnianych założeniach, prędkość oraz przyśpieszenie w czasie, można opisać wzorami z
+                poprzedniego akapitu, przy czym stale
+                zachodzi równość <strong>ω = √(k/m)</strong>.
+            </p>
+            <img src="../bin/oscylacje_kulki.png" alt="Oscylacje kulki na sprężynie"
+                style="display: block; margin: 0 auto; width: 50%;">
+            <h3>Energia</h3>
+            <p>
+                Energia oscylatora harmonicznego bedącego masą zawieszoną na sprężynie, dzieli się na dwa rodzaje:
+                <strong>kinetyczną</strong> i <strong>potencjalną</strong>. W położeniu równowagi cała energia układu
+                jest
+                kinetyczna, a w skrajnych położeniach - potencjalna. Całkowita energia układu jest stała i wynosi:
+            </p>
+            <p>
+                <strong>E = 1/2 kA²</strong>, gdzie:
+            </p>
+            <ul>
+                <li><strong>k:</strong> Stała sprężystości sprężyny, określająca jej sztywność.</li>
+                <li><strong>A:</strong> Amplituda, maksymalne wychylenie od położenia równowagi.</li>
+            </ul>
+            <p>
+                Energia potencjalna <strong>Ep(U) = 1/2 k x²</strong> zależy od wychylenia x i jest maksymalna, gdy
+                ciało znajduje się w skrajnych położeniach (x = ±A).
+                W tych punktach prędkość jest równa zero, a cała energia układu pochodzi od sprężyny.
+            </p>
+            <p>
+                Energia kinetyczna <strong>Ek(K) = 1/2 m v²</strong> zależy od masy ciała i jego prędkości. Osiąga
+                maksimum, gdy ciało przechodzi przez położenie równowagi (x = 0),
+                gdzie prędkość jest największa, a cała energia pochodzi od ruchu ciała.
+            </p>
+            <p>
+                Całkowita energia układu jest zachowana w czasie, co oznacza, że w każdej chwili suma energii
+                kinetycznej i potencjalnej jest równa wartości <strong>E = 1/2 kA²</strong>.
+                To właśnie wymiana między tymi dwoma rodzajami energii jest charakterystyczna dla ruchu harmonicznego.
+            </p>
+            <img src="../bin/energia.png" alt="Energia kulki w czasie"
+                style="display: block; margin: 0 auto; width: 50%;">
+
+            <h3>Realne Układy i Drgania Tłumione</h3>
+            <p>
+                W rzeczywistych systemach obserwuje się często drgania tłumione, w których amplituda ruchu zmniejsza się
+                z czasem w wyniku utraty energii na skutek tarcia lub oporu środowiska.
+            </p>
+            <video src="../bin/Dadmping_oscilation.mp4" controls style="display: block; margin: 0 auto; width: 70%;">
+                Your browser does not support the video tag.
+            </video>
+            <p>
+                Matematycznie opisuje się to za pomocą równania: <br>
+                <strong>x(t) = A<sub>0</sub> e<sup>-bt</sup> cos(ω<sub>d</sub>t + φ)</strong>, gdzie:
+            </p>
+            <ul>
+                <li><strong>A<sub>0</sub>:</strong> Początkowa amplituda.</li>
+                <li><strong>b:</strong> Współczynnik tłumienia, wpływający na szybkość zaniku amplitudy.</li>
+                <li><strong>ω<sub>d</sub>:</strong> Częstość drgań tłumionych, mniejsza od częstości w układzie
+                    idealnym.</li>
+            </ul>
+            <p>
+
+                Współczynnik tłumienia <strong>b</strong> zależy od sił oporu działających na układ. W przypadku
+                tłumienia wiskotycznego,
+                gdzie siła oporu jest proporcjonalna do prędkości, siłę tłumiącą wyraża wzór:
+            </p>
+            <p>
+                <strong>F<sub>op</sub> = -b v</strong>,
+            </p>
+            <p>
+                gdzie <strong>v</strong> to prędkość ciała. Przykładem takiej siły jest opór lepkościowy opisany prawem
+                Stokesa:
+            </p>
+            <p>
+                <strong>F<sub>op</sub> = -6π η r v</strong>,
+            </p>
+            <p>
+                gdzie:
+            </p>
+            <ul>
+                <li><strong>η:</strong> Lepkość dynamiczna cieczy.</li>
+                <li><strong>r:</strong> Promień kulki poruszającej się w cieczy.</li>
+            </ul>
+            <p>
+                W takim przypadku współczynnik tłumienia <strong>b</strong> jest równy <strong>6π η r</strong>, co
+                pokazuje, że zależy on od
+                właściwości środowiska (lepkości) oraz rozmiaru obiektu (promienia).
+            </p>
+            <p>
+                <strong>Rodzaje tłumienia w zależności od wartości współczynnika b:</strong>
+            </p>
+            <ul>
+                <li><strong>Tłumienie podkrytyczne:</strong> Gdy <strong>b &lt; 2√(km)</strong>, układ wykonuje drgania
+                    o malejącej amplitudzie.</li>
+                <li><strong>Tłumienie krytyczne:</strong> Gdy <strong>b = 2√(km)</strong>, układ powraca do położenia
+                    równowagi bez oscylacji w najkrótszym możliwym czasie.</li>
+                <li><strong>Tłumienie nadkrytyczne:</strong> Gdy <strong>b &gt; 2√(km)</strong>, układ powraca do
+                    równowagi bez oscylacji, ale wolniej niż w przypadku tłumienia krytycznego.</li>
+            </ul>
+            <img src="../bin/Tłumienia.jpg" alt="Rodzaje tłumienia" style="display: block; margin: 0 auto; width: 50%;">
+            <p>
+                Wysoko tłumione układy mogą przejść w ruch aperiodyczny, w którym nie dochodzi do drgań, a układ
+                powraca do równowagi w sposób bezoscylacyjny. Przykłady takich układów obejmują ruch pojazdu
+                amortyzowanego lub mechanizm zamykania drzwi.
+            </p>
+
+        </article>
+
+        <article id="animacja" style="display: none;">
+            <h2>Symulacja</h2>
+            <div id="animacjaInfromation">
+                <p>
+                    Interaktywna symulacja ruchu harmonicznego i tłumionego. Możliwość eksperymentowania z różnymi
+                    parametrami, takimi jak amplituda, współczynnik tłumienia i częstotliwość.
+                </p>
+                <p>
+                    Symulacja ukazuje symboliczne oscylacje kulki na sprężynie, w związku z czym podawane wartości jako
+                    takie nie posiadają jednostek.<br>
+                </p>
+                <p>
+                    Z tego faktu wynikają limity w celach zachowania działania aniamcji. <br>
+                    <strong>
+                        Współczynnik sprężystości (k): (0, 100]<br>
+                        Masa (m): (0, 100]<br>
+                        Amplituda (A): [0, 100]<br>
+                        Przesunięcie fazowe (ϕ): brak<br>
+                        Współczynnik tłumienia (b): [0, 2√(km))<br>
+                    </strong>
+                    Limit współczynnika tłumienia wynika, ze wzoru, który został omówiony w sekcji głównej, a dokładniej
+                    z występującego tam pierwiastka.
+                </p>
+            </div>
+            <div id="animacjaContainer">
+                <canvas id="animacjaCanvas" width="800" height="400"></canvas>
+                <form id="animacjaForm">
+                    <label for="k">Współczynnik sprężystości (k):</label>
+                    <input type="number" id="k" name="k" value="10" step="0.1" required><br>
+                    <label for="m">Masa (m):</label>
+                    <input type="number" id="m" name="m" value="1" step="0.1" required><br>
+                    <label for="amplitude">Amplituda (A):</label>
+                    <input type="number" id="amplitude" name="amplitude" value="100" step="0.1" required><br>
+                    <label for="phi">Przesunięcie fazowe (ϕ):</label>
+                    <input type="number" id="phi" name="phi" value="0" step="0.1" required><br>
+                    <input type="checkbox" id="dampingCheckbox" name="damping"> Tłumienie<br>
+                    <div id="dampingField" style="display: none;">
+                        <label for="b">Współczynnik tłumienia (b):</label>
+                        <input type="number" id="b" name="b" value="0.5" step="0.1"><br>
+                    </div>
+                    <button type="button" id="startAnimacja">Start symulacji</button>
+                    <button type="button" id="stopAnimmacji">Stop symulacji</button>
+                    <button type="button" id="zapiszUstawienia" style="display: none;">Zapisz ustawienia</button>
+                    <button type="button" id="przywrocUstawienia" style="display: none;">Przywróć ustawienia</button>
+                </form>
+            </div>
+        </article>
+
+
+        <article id="login" style="display: none;">
+            <h2>Login</h2>
+            <form>
+                <label for="username">Nazwa użytkownika:</label><br>
+                <input type="text" id="username" name="username" required><br>
+
+                <label for="password">Hasło:</label><br>
+                <input type="password" id="password" name="password" required><br>
+
+                <button id="submitLoginBtn" type="submit">Zaloguj się</button>
+            </form>
+            <div id="loginMessage"></div>
+        </article>
+
+
+        <article id="rejestracja" style="display: none;">
+            <h2>Rejestracja</h2>
+            <form>
+                <label for="r_username">Nazwa użytkownika:</label><br>
+                <input type="text" id="r_username" name="r_username" required><br>
+
+                <label for="r_password">Hasło:</label><br>
+                <input type="password" id="r_password" name="r_password" required><br>
+
+                <label for="confirmPassword">Potwierdź hasło:</label><br>
+                <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+
+                <button id="registerSubmitBtn" type="submit">Zarejestruj się</button>
+            </form>
+            <div id="registerMessage"></div>
+        </article>
+    </main>
+
+
+    <footer>
+        <p>© 2025 Damian Wędrocha.</p>
+    </footer>
+</body>
+
+</html>
