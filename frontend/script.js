@@ -139,7 +139,7 @@ async function logout() {
     const refreshToken = sessionStorage.getItem('refreshToken');
 
     try {
-        const response = await fetch('http://localhost:3051/logout', {
+        const response = await fetch('https://projekt-techniki-internetowe-d6bxbyctghd5bgh9.polandcentral-01.azurewebsites.net/logout', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -150,7 +150,7 @@ async function logout() {
 
         if (!response.ok) {
             // Refresh token handling upon failed logout
-            const refreshResponse = await fetch('http://localhost:3051/token', {
+            const refreshResponse = await fetch('https://projekt-techniki-internetowe-d6bxbyctghd5bgh9.polandcentral-01.azurewebsites.net/token', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ refreshToken }),
@@ -161,7 +161,7 @@ async function logout() {
                 sessionStorage.setItem('accessToken', newAccessToken);
 
                 // Retry logout
-                const retryResponse = await fetch('http://localhost:3051/logout', {
+                const retryResponse = await fetch('https://projekt-techniki-internetowe-d6bxbyctghd5bgh9.polandcentral-01.azurewebsites.net/logout', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -250,7 +250,7 @@ window.onload = function () {
         }
 
         try {
-            const response = await fetch('http://localhost:3051/register', {
+            const response = await fetch('https://projekt-techniki-internetowe-d6bxbyctghd5bgh9.polandcentral-01.azurewebsites.net/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -289,7 +289,7 @@ window.onload = function () {
         }
 
         try {
-            const response = await fetch('http://localhost:3051/login', {
+            const response = await fetch('https://projekt-techniki-internetowe-d6bxbyctghd5bgh9.polandcentral-01.azurewebsites.net/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
@@ -652,7 +652,7 @@ async function saveAnimationSettings() {
     // Validate inputs
 
     try {
-        const response = await fetch('http://localhost:3051/animation-settings', {
+        const response = await fetch('https://projekt-techniki-internetowe-d6bxbyctghd5bgh9.polandcentral-01.azurewebsites.net/animation-settings', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -663,7 +663,7 @@ async function saveAnimationSettings() {
 
         if (!response.ok) {
             // Handle token refresh
-            const refreshResponse = await fetch('http://localhost:3051/token', {
+            const refreshResponse = await fetch('https://projekt-techniki-internetowe-d6bxbyctghd5bgh9.polandcentral-01.azurewebsites.net/token', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ refreshToken: sessionStorage.getItem('refreshToken') }),
@@ -674,7 +674,7 @@ async function saveAnimationSettings() {
                 sessionStorage.setItem('accessToken', accessToken);
 
                 // Retry saving settings
-                const retryResponse = await fetch('http://localhost:3051/animation-settings', {
+                const retryResponse = await fetch('https://projekt-techniki-internetowe-d6bxbyctghd5bgh9.polandcentral-01.azurewebsites.net/animation-settings', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -699,7 +699,7 @@ async function saveAnimationSettings() {
 // Function to retrieve animation settings
 async function retrieveAnimationSettings() {
     try {
-        const response = await fetch('http://localhost:3051/animation-settings', {
+        const response = await fetch('https://projekt-techniki-internetowe-d6bxbyctghd5bgh9.polandcentral-01.azurewebsites.net/animation-settings', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -715,7 +715,7 @@ async function retrieveAnimationSettings() {
 
         if (!response.ok) {
             // If retrieval fails, handle token refresh
-            const refreshResponse = await fetch('http://localhost:3051/token', {
+            const refreshResponse = await fetch('https://projekt-techniki-internetowe-d6bxbyctghd5bgh9.polandcentral-01.azurewebsites.net/token', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ refreshToken: sessionStorage.getItem('refreshToken') }),
@@ -726,7 +726,7 @@ async function retrieveAnimationSettings() {
                 sessionStorage.setItem('accessToken', accessToken);
 
                 // Retry retrieving settings
-                const retryResponse = await fetch('http://localhost:3051/animation-settings', {
+                const retryResponse = await fetch('https://projekt-techniki-internetowe-d6bxbyctghd5bgh9.polandcentral-01.azurewebsites.net/animation-settings', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
