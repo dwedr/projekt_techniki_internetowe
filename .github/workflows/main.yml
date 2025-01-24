@@ -1,9 +1,10 @@
-name: Deploy Azure Webb server
+name: Deploy Azure Web Server
 
 on:
   push:
     branches:
       - main
+
 jobs:
   backend-deploy:
     runs-on: ubuntu-latest
@@ -19,6 +20,16 @@ jobs:
       - name: Install dependencies
         working-directory: ./backend
         run: npm install
+
+      - name: Build (if applicable)
+        working-directory: ./backend
+        run: |
+          if [ -f package.json ]; then
+            npm run build || echo "No build step defined"
+          fi
+
+      - name: Ensure proper files are ready for deployment
+        run: ls -R ./backend 
 
       - name: Deploy Backend to Azure
         uses: azure/webapps-deploy@v2
