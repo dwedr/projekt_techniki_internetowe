@@ -63,6 +63,11 @@ function validateAnimationSettings(settings) {
   return true;
 }
 
+app.get('/', async (req, res) =>{
+  return res.status(201).json({ message: 'App working.' });
+});
+
+
 // User Login
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
