@@ -3,7 +3,7 @@ name: Deploy Azure Webb server
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   backend-deploy:
     runs-on: ubuntu-latest
